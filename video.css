@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(90deg,#2c3e50,#26ea60,#2980b9,#e74c3c,#8e44ad);
+    background-size: 400%;
+    animation: animate 10s infinite;
+}
+.video {
+    width: 50px;
+    margin: 100px;
+    margin-left: 50px;
+    cursor: pointer;
+} 
+@media (max-width: 600px){
+    .video {
+        width: 25px;
+        margin-left: 10px;
+    }
+}
+@keyframes animate {
+    0% {
+        background-position: 0% 50%;   
+    }
+     50% {
+        background-position: 100% 50%;
+    
+    }
+     100% {
+        background-position: 0% 50%;    
+    }
+}
+
+.bi {
+    cursor: pointer;
+}
+.audio-div1 {
+    margin: 50px;
+    
+}
+.shartlar {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+.shart1 {
+    margin: 50px;
+    color: white;
+}
+.CHEKBOX {
+    color: white;
+    text-align: center;
+}
+.chekbox {
+    cursor: pointer;
+}
+.Roziman {
+ position: relative;
+ margin-left: 47%;
+ width: 90px;
+ padding: 10px;
+ border-radius: 10px;
+ border: none;
+ cursor: pointer;
+}
+@media (max-width:600px){
+    .Roziman {
+   position: relative;
+   right: 35px;
+    }
+}
+.Niklar {
+    color: white;
+    position: relative;
+    bottom: 15px;
+    left: 15px;
+}
+.Despscito {
+    position: relative;
+    bottom: 30px;
+    cursor: pointer;
+}
+.Despscito-text {
+    position: relative;
+    bottom: 45px;
+    left: 15px;
+    color: white;
+}

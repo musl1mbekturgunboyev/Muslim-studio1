@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Zakas berish</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f2f2f2;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm">
+    <h3>Menga yozing</h3>
+    <input type="text" id="name" placeholder="Ismingiz" required>
+    <input type="tel" id="phone" placeholder="Telefon raqamingiz" required>
+    
+    <select id="service" required>
+      <option value="">Xizmat turini tanlang</option>
+      <option value="Video montaj">🎬 Mobilagrafiya</option>
+      <option value="Tug'ilgan kun videolari">🎉 Telefon orqali tabriklash</option>
+      <option value="Reklama roliklari">📢 Dekaratsiya bilan tabriklash</option>
+      <option value="Boshqa xizmat">🔧 Boshqa xizmat</option>
+    </select>
+
+    <textarea id="message" placeholder="Xabaringiz" required></textarea>
+    <button type="submit">Yuborish</button>
+  </form>
+
+  <script>
+    const TOKEN = '7548883852:AAFNBCvp1MBNjshZPkso-xRe7S8e5qS2KqA'; // Sizning bot tokeningiz
+    const CHAT_ID = '5835402908'; // Sizning Telegram ID'ingiz
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value;
+
+      const telegramMessage = `📝 Yangi xabar:\n👤 Ismi: ${name}\n📱 Telefon: ${phone}\n🔧 Xizmat turi: ${service}\n💬 Xabar: ${message}`;
+
+      fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: telegramMessage
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.ok) {
+          alert("✅ Xabar yuborildi!");
+        } else {
+          alert("❌ Xatolik: " + data.description);
+          console.error(data);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+body {
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/920289011195654411/E5E18F14E53E213ED486FFA821DC9EF8D9C8C611/?imw=512&amp;imh=320&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=true);
+}
+.login-div {
+    position: relative;
+    left: 40%;
+    top: 100px;  
+}
+@media (max-width:600px){
+    .login-div {
+        left: 20px;
+    }
+}
+.kirish {
+    position: relative;
+    top: 20px;
+    left: 130px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    width: 100px;
+}
+@media(max-width:600px){
+    .kirish{
+        font-size: 15px;
+        padding: 2;
+    }
+}
+.input {
+    width: 320px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.p1 {
+    font-size: 20px;
+    color: white;
+}
+.bi {
+    cursor: pointer;
+}
